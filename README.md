@@ -1,1 +1,1 @@
-# shuffle-cards
+# shuffle-com.cards
