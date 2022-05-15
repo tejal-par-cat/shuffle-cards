@@ -17,7 +17,7 @@ public class CardShuffler {
     static String faceValue[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     static String suit[] = {clubSymbol, diamondSymbol, spadeSymbol, heartSymbol};
 
-    String cardDeck[];
+    String[] cardDeck;
 
     public CardShuffler() {
         cardDeck = new String[52];
