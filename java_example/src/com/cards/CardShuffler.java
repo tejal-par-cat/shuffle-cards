@@ -17,6 +17,16 @@ public class CardShuffler {
     static String faceValue[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     static String suit[] = {clubSymbol, diamondSymbol, spadeSymbol, heartSymbol};
 
+    String cardDeck[];
+
+    public CardShuffler() {
+        cardDeck = new String[52];
+    }
+
+    String[] getCardDeck() {
+        return cardDeck;
+    }
+
     public static void main(String [] args)
     {
         System.out.println("Ready to shuffle some cards.\n");
@@ -26,62 +36,60 @@ public class CardShuffler {
         // 3. Shuffle the deck
         // 4. Print shuffled deck
 
-        String cardDeck[] = createUnshuffledDeck();
+        CardShuffler shuffler = new CardShuffler();
+        shuffler.createUnshuffledDeck();
         System.out.println("Printing unshuffled card deck...");
-        printCardDeck(cardDeck);
-        System.out.println("\nPrinting shuffled card deck...");
-        shuffleCardDeck(cardDeck);
+        shuffler.printCardDeck(shuffler.getCardDeck());
+        System.out.println("\nShuffle & Print shuffled card deck...");
+        shuffler.shuffleCardDeck();
     }
 
-    private static String[] createUnshuffledDeck() {
-        String deck[] = new String[52];
+    public void createUnshuffledDeck() {
         int n = 0;
 
         for (int i = 0; i < 4; i = i + 1)
         {
             for (int j = 0; j < 13; j = j + 1) {
-                deck[n] = faceValue[j] + suit[i];
+                cardDeck[n] = faceValue[j] + suit[i];
                 n++;
             }
         }
-        return deck;
     }
 
-    private static void printCardDeck(String cardDeck[]) {
+    public void printCardDeck(String deck[]) {
         int n = 0;
         for (int i = 0; i < 4; i = i + 1)
         {
             for (int j = 0; j < 13; j = j + 1) {
-                System.out.print(cardDeck[n] + " ");
+                System.out.print(deck[n] + " ");
                 n++;
             }
             System.out.println();
         }
     }
 
-    private static void shuffleCardDeck(String origCardDeck[]) {
+    public void shuffleCardDeck() {
+        // 1. Generate random index
+        // 2. Create new array and copy element from orig array into new index pos
+
+        // Info:
         // 0 --> 1♣
         // 1 --> 2♣
         //[1♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ 1♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦ 1♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ 1♥ 2♥ 3♥ 4♥ 5♥ 6♥ 7♥ 8♥ 9♥ 10♥ J♥ Q♥ K♥ ]
 
-        // 1. Generate random index
-        // 2. Create new array and copy element from orig array into new index pos
 
-        // 1. Generate random index
+        // Step 1. Generate random index
         // generate 52 numbers using nextInt
         // numbers should be unique
-
         Random random = new Random();
         ArrayList<Integer> shuffleOrder = new ArrayList<>();
-        // 0 -> Ele1
-        // 1 -> Ele2
 
         for (int i = 0; i < 52; i++) {
             boolean isNumberStored = false;
 
-            while (isNumberStored == false) {
+            while (!isNumberStored) {
                 int randomInt = random.nextInt(52);
-                if (shuffleOrder.contains(randomInt) == false) {
+                if (!shuffleOrder.contains(randomInt)) {
                     shuffleOrder.add(randomInt);
                     isNumberStored = true;
                 }
@@ -89,12 +97,11 @@ public class CardShuffler {
         }
 
         // 2. Create new array and copy element from orig array into new index pos
-
         // Orig = origCardDeck[]
-        //Original Array
+        // Original Array
+        // [1♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ 1♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦ 1♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ 1♥ 2♥ 3♥ 4♥ 5♥ 6♥ 7♥ 8♥ 9♥ 10♥ J♥ Q♥ K♥ ]
         // 0 -> 1♣
         // 1 -> 2♣
-        //[1♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ 1♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦ 1♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ 1♥ 2♥ 3♥ 4♥ 5♥ 6♥ 7♥ 8♥ 9♥ 10♥ J♥ Q♥ K♥ ]
 
         // ArrayList with new index order
         // 0th pos -> 15
@@ -102,11 +109,11 @@ public class CardShuffler {
 
         // Pick ele at 15th pos from orig array -> copy to new array 0th pos
         // New array which will store shuffled com.cards
-        String shuffledCardDeck[] = new String[52];
+        String[] shuffledCardDeck = new String[52];
         for (int i = 0; i < 52; i++) {
             int newIndexPos = shuffleOrder.get(i);
             // assign ele from ith pos in orig array to newIndexPos in shuffledCardDeck
-            shuffledCardDeck[i] = origCardDeck[newIndexPos];
+            shuffledCardDeck[i] = cardDeck[newIndexPos];
         }
 
         printCardDeck(shuffledCardDeck);
