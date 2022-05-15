@@ -16,7 +16,7 @@ public class CardShuffler {
 
     public static void main(String [] args)
     {
-        System.out.println("Ready to shuffle some com.cards.\n");
+        System.out.println("Ready to shuffle some cards.\n");
 
         // 1. Create card deck - unshuffled
         // 2. Print unshuffled deck
