@@ -2,13 +2,13 @@
 
 - Random algo to shuffle cards
 
-Example unshuffled card deck:
+### Unshuffled card deck example
 1♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣
 1♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦
 1♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠
 1♥ 2♥ 3♥ 4♥ 5♥ 6♥ 7♥ 8♥ 9♥ 10♥ J♥ Q♥ K♥
 
-Shuffled deck:
+### Shuffled deck example
 7♦ J♣ 5♥ Q♣ 1♦ 2♠ K♥ 8♠ J♦ 9♥ 5♠ 8♥ 8♣
 1♠ 5♣ 3♥ 6♣ 9♠ 4♠ 8♦ 6♥ Q♠ 7♠ 7♣ 3♣ 4♦
 9♦ 1♥ K♦ 3♦ 3♠ K♠ 4♣ 10♣ 5♦ 4♥ 2♣ 10♥ Q♦

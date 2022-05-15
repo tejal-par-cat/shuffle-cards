@@ -3,7 +3,10 @@ package com.cards;
 import java.util.ArrayList;
 import java.util.Random;
 
-// Create deck of cards in a sequence and then shuffle using a random shuffler. Finally display the shuffled deck
+/**
+ * Create deck of cards in a sequence and then shuffle using a random shuffler. Display the shuffled deck
+ * Store card deck in memory
+ */
 public class CardShuffler {
 
     static String clubSymbol = "\u2663";
