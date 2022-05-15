@@ -56,7 +56,7 @@ public class CardShuffler {
         }
     }
 
-    public void printCardDeck(String deck[]) {
+    public void printCardDeck(String[] deck) {
         int n = 0;
         for (int i = 0; i < 4; i = i + 1)
         {
