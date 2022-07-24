@@ -1,5 +1,7 @@
 # shuffle-cards
 
+[CI](https://app.travis-ci.com/tejal-par/shuffle-cards.svg?token=11DuFnRyGiWUtB8z9FuQ&branch=main)
+
 - Random algo to shuffle cards
 
 ### Unshuffled card deck example
