@@ -31,7 +31,6 @@ public class CardShuffler2D {
     public static void main(String [] args)
     {
         System.out.println("Ready to shuffle some cards.\n");
-
         // 1. Create card deck - unshuffled
         // 2. Print unshuffled deck
         // 3. Shuffle the deck
@@ -123,5 +122,4 @@ public class CardShuffler2D {
 
         return shuffledDeck;
     }
-
 }
