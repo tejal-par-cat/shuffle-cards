@@ -1,6 +1,4 @@
-# shuffle-cards
-
-[![Build Status](https://app.travis-ci.com/tejal-par/shuffle-cards.svg?token=11DuFnRyGiWUtB8z9FuQ&branch=main)](https://app.travis-ci.com/tejal-par/shuffle-cards)
+# shuffle-cards [![Build Status](https://app.travis-ci.com/tejal-par/shuffle-cards.svg?token=11DuFnRyGiWUtB8z9FuQ&branch=main)](https://app.travis-ci.com/tejal-par/shuffle-cards)
 
 - Random algo to shuffle cards
 
